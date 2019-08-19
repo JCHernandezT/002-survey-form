@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Survey Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header>
+		<h1 id="title">Customer Satisfaction Survey</h1>
+	</header>
+	<section>
+		<form id="survey-form">
+			<p id="description">Thank you for selecting us as your number one provider, your satisfaction is very important for us. 
+			Please help us serve you better by taking a few minutes to tell us about the service you received today. Click the "Submit" button
+			to submit your survey once finished.</p>
+			<label id="name-label" class="label-center" for="name">Name*:</label>
+			<input id="name" name="name" type="text" required="required" placeholder="Please enter you name" />
+			<label id="email-label" class="label-center" for="email">Email*:</label>
+			<input id="email" name="email" type="email" required="required" placeholder="Please enter your email" />
+			<label id="address-label" class="label-center" for="address">Address*:</label>
+			<input id="address" name="address" type="text" required="required" placeholder="Please enter your address" />
+			<label id="number-label" class="label-center" for="number">Age*:</label>
+			<input id="number" name="number" type="number" required="required" min="1" max="99" placeholder="Please enter your age" />
+			<label id="dropdown-label" class="label-center">Ocupation:</label>
+			<select id="dropdown" name="ocupation">
+				<option>Student</option>
+				<option>Employee</option>
+			</select>
+			<label id="contact-label" class="label-right">Which way would you prefer to be contacted:</label>
+			<fieldset id="contact-field">
+				<input id="contact-email" type="radio" name="contact" value="by-email">
+				<label for="contact-email">By Email</label>
+				<input id="contact-person" type="radio" name="contact" value="in-person">
+				<label for="contact-person">In Person</label>
+				<input id="contact-phone" type="radio" name="contact" value="by-phone">
+				<label for="contact-phone">By Phone</label>	
+			</fieldset>
+			<label id="interest-label" class="label-right">I was interested in the following products (check all that apply):</label>
+			<fieldset id="interest-field">
+			  <input type="checkbox" id="photo" name="interests" value="ph">
+			  <label for="photo">Photography</label>
+			  <input type="checkbox" id="watercol" name="interests" value="wa">
+			  <label for="watercol">Watercolor</label>
+			  <input type="checkbox" id="acrylic" name="interests" value="ac">
+			  <label for="acrylic">Acrylic</label>
+			</fieldset>  
+			<label id="suggestions-label" class="label-right">Suggestions:</label>
+			<textarea id="suggestions" name="suggestions" placeholder="Please enter your comments"></textarea>
+			<input id="submit" type="submit" value="Submit" />
+		</form>
+	</section>
+	<footer>
+		<p id="autor">&copy;<span id="year"></span>&nbsp;J.C. Hernández.</p>
+	</footer>
+	<script src="js/main.js"></script>
+</body>
+</html>

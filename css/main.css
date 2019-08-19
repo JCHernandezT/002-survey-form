@@ -1,0 +1,296 @@
+
+/*
+ * Parent Grid
+ */
+body {
+	font-family: 'Roboto', sans-serif;
+	color: #616161;
+	background: linear-gradient(90deg,  #43cea2, #185a9d);
+	display: grid;
+	grid-template-columns: 1fr 7fr 1fr;
+    grid-template-rows: auto 1fr auto;
+	grid-template-areas:
+      ". header ."
+      ". content ."
+      ". footer .";
+}
+
+header {
+	grid-area: header;
+	justify-self: center;
+	color: white;
+	text-align: center;
+}
+
+section {
+	grid-area: content;
+	background: #fafafa;
+    border-radius: 4px;
+}
+
+footer {
+	grid-area: footer;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    flex-direction: row;
+	color: white;
+}
+
+form#survey-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto-fill, 1fr);
+	grid-template-areas:
+      "p p"
+      "name-label-a name-a"
+      "email-label-a email-a"
+	  "address-label-a address-a"
+      "number-label-a number-a"
+      "dropdown-label-a dropdown-a"
+	  "contact-label-a contact-field-a"
+      "interest-label-a interest-field-a"
+      "suggestions-label-a suggestions-a"
+	  "button button";
+}
+
+/*
+ * Form Grid placing items
+ */
+ /*labels*/
+p#description {
+	grid-area: p;
+	text-align: justify;
+	justify-self: center;
+	align-self: center;
+	margin-top: 5%;
+	margin-left: 10%;
+	margin-right: 10%;|
+}
+
+label#name-label {
+	grid-area: name-label-a;
+}
+
+label#email-label {
+	grid-area: email-label-a;
+}
+
+label#address-label {
+	grid-area: address-label-a;
+}
+
+label#number-label {
+	grid-area: number-label-a;
+}
+
+label#dropdown-label {
+	grid-area: dropdown-label-a;
+}
+
+label#contact-label {
+	grid-area: contact-label-a;
+}
+
+label#interest-label {
+	grid-area: interest-label-a;
+}
+
+label#suggestions-label {
+	grid-area: suggestions-label-a;
+}
+
+ /*inputs*/
+input#name {
+	grid-area: name-a;
+}
+
+input#email {
+	grid-area: email-a;
+}
+
+input#address {
+	grid-area: address-a;
+}
+
+input#number {
+	grid-area: number-a;
+}
+
+select#dropdown {
+	grid-area: dropdown-a;
+}
+
+fieldset#contact-field {
+	grid-area: contact-field-a;
+}
+
+fieldset#interest-field {
+	grid-area: interest-field-a;
+}
+
+textarea#suggestions {
+	grid-area: suggestions-a;
+}
+
+input#submit {
+	grid-area: button;
+}
+
+/* CSS Additional configuration */
+label.label-center {
+	padding-right: 20px;
+	justify-self: end;
+	align-self: center;
+	text-align: justify;
+}
+
+label.label-right {
+	margin-left: 20%;
+	padding-top: 20px;
+	padding-right: 20px;
+	justify-self: end;
+	align-self: start;
+	text-align: right;
+}
+
+input[type=text], select, input[type=number], input[type=email] {
+  font-family: 'Roboto', sans-serif;
+  color: #616161;
+  font-size: 16px;
+  width: 60%;
+  min-width: 154px;
+  height: 40px;
+  padding: 0px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/*
+ * Third grid for input fieldsets
+ */
+fieldset {
+  width: 60%;
+  min-width: 154px;
+  height: auto;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 1fr 1fr;
+	grid-template-areas:
+      "label input"
+      "label input"
+      "label input";
+  justify-items: start;
+  align-items: center;
+}
+
+textarea {
+  font-family: 'Roboto', sans-serif;
+  width: 60%;
+  min-width: 154px;
+  height: 150px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: vertical;
+}
+
+input[type=submit] {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  width: 200px;
+  height: 40px;
+  background-color: #4b9e98;
+  color: white;
+  margin: 8px 0;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-self: center;
+  align-self: center;
+  -webkit-transition: background-color 0.4s;
+  -moz-transition: background-color 0.4s;
+  -o-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+
+input[type=submit]:hover {
+	background-color: #336e69;
+}
+
+/*
+ * Responsive Grids
+ */
+@media (max-width: 663px){
+	form#survey-form {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(auto-fill, 1fr);
+		grid-template-areas:
+		  "p"
+		  "name-label-a"
+		  "name-a"
+		  "email-label-a"
+		  "email-a"
+		  "address-label-a"
+		  "address-a"
+		  "number-label-a"
+		  "number-a"
+		  "dropdown-label-a"
+		  "dropdown-a"
+		  "contact-label-a"
+		  "contact-field-a"
+		  "interest-label-a"
+		  "interest-field-a"
+		  "suggestions-label-a "
+		  "suggestions-a"
+		  "button";
+	}
+	
+	label.label-center {
+		justify-self: start;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+	
+	label.label-right {
+		justify-self: start;
+		text-align: left;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+	
+	input[type=text], select, input[type=number], input[type=email] {
+ width: auto;
+	  margin-left: 10%;
+	  margin-right: 10%;
+	}
+	
+	fieldset {
+	  width: auto;
+	  margin-left: 10%;
+	  margin-right: 10%;
+	}
+
+	textarea {
+	  width: auto;
+	  margin-left: 10%;
+	  margin-right: 10%;
+	}
+}
+ 
+ 
